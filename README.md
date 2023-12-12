@@ -1,5 +1,5 @@
 # CompCheck
-CompCheck is an antomated upgrade compatibility checking framework which generates incompatibility-revealing tests based on previous examples. CompCheck first establishes an offline knowledge base of incompatibility issues by mining from open source projects and their upgrades. It then discovers incompatibilities for a specific client project, by searching for similar library usages in the knowledge base and generating tests to reveal the problems. You can find details at [this website](https://sites.google.com/d/1FvMXfwyHTKL5bMDGOjXzGuYi3fGJuvYg/p/1o7hVWcnUlAg_szXH7gmYXPYg3b0TzwIC/edit?pli=1.).
+CompCheck is an antomated upgrade compatibility checking framework which generates incompatibility-revealing tests based on previous examples. CompCheck first establishes an offline knowledge base of incompatibility issues by mining from open source projects and their upgrades. It then discovers incompatibilities for a specific client project, by searching for similar library usages in the knowledge base and generating tests to reveal the problems. You can find details at [this website](https://sites.google.com/view/compcheck).
 
 ## Install 
 You can clone the repository to your local environment. Here we provide our operating environment for reference (Java 1.8; Maven 3.6.3).
