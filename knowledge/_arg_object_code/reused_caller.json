@@ -1,0 +1,344 @@
+[
+    {
+        "id": "c1-12",
+        "desc": "()V",
+        "args": {
+            "arg_1_kryo": ["Kryo kryo = new Kryo();"],
+            "arg_2_output": ["Output output = new Output(4096);"],
+            "arg_3_immutableMultiMap": ["ImmutableMultimap<Object, Object> immutableMultiMap = ImmutableMultimap.builder().build();"]
+        },
+        "extra_deps": [],
+        "extra_imports": ["import com.esotericsoftware.kryo.Kryo;\n", "import com.esotericsoftware.kryo.io.Output;\n", "import com.google.common.collect.ImmutableMultimap;\n"]
+    },
+    {
+        "id": "c1-16",
+        "desc": "()[B",
+        "args": {
+            "arg_2_object": ["Serializable object = (Serializable) (new String());"]
+        },
+        "extra_deps": [],
+        "extra_imports": ["import com.esotericsoftware.kryo.Kryo;\n", "import com.esotericsoftware.kryo.io.Output;\n", "import com.google.common.collect.ImmutableMultimap;\n"]
+    },
+    {
+        "id": "c1-18",
+        "desc": "()[B",
+        "args": {
+            "arg_2_obj": ["final Object obj = new Boo(\"hello\");"]
+        },
+        "extra_deps": [],
+        "extra_imports": [],
+        "extra_func": ["    public static class Boo {\n", "        public final String name;\n", "        private Boo() {\n", "            this(\"boo\");\n", "        }\n", "        public Boo(String name) {\n", "            this.name = name;\n", "        }\n", "    }\n"]
+    },
+    {
+        "id": "c2-2",
+        "desc": "(Ljava/lang/ClassLoader;)V",
+        "args": {
+            "arg_1_obj": ["super(new SoyMsgExtractor());"]
+        },
+        "extra_deps": ["<dependency>\n", "    <groupId>org.dynjs</groupId>\n", "    <artifactId>dynjs</artifactId>\n", "    <version>0.3.0</version>\n", "</dependency>\n"],
+        "extra_imports": ["import org.dynjs.cli.Arguments;\n"],
+        "extra_func": []
+    },
+    {
+        "id": "c3-1",
+        "desc": "()Ljava/lang/String;",
+        "args": {
+            "arg_1_grequest": ["GoogleRequest grequest = new GoogleRequest();", "List<Request> requests = new ArrayList<>();", "grequest.setRequests(requests);"]
+        },
+        "extra_deps": ["        <dependency>\n", "           <groupId>com.galenframework</groupId>\n", "            <artifactId>galen-core</artifactId>\n", "            <version>2.4.3</version>\n", "        </dependency>\n"], 
+        "extra_imports": ["import com.galenframework.ocr.google.pojo.request.GoogleRequest;\n", "import com.galenframework.ocr.google.pojo.request.Request;\n", "import java.util.ArrayList;\n", "import java.util.List;\n"]
+    },
+    {
+        "id": "c3-4",
+        "desc": "(Ljava/lang/String;)Lorg/apache/http/HttpResponse;",
+        "args": {
+            "arg_1_grequest": ["GoogleRequest grequest = new GoogleRequest();", "List<Request> requests = new ArrayList<>();", "grequest.setRequests(requests);"]
+        },
+        "extra_deps": [],
+        "extra_imports": ["import com.galenframework.ocr.google.pojo.request.GoogleRequest;\n", "import com.galenframework.ocr.google.pojo.request.Request;\n", "import java.util.ArrayList;\n", "import java.util.List;\n"]
+    },
+    {
+        "id": "c6-12",
+        "desc": "()V",
+        "args": {
+            "arg_1_parentModule": ["this.parentModule = new AllureGuiceModule(ClassLoader.getSystemClassLoader(), new File(\"\"));\n"]
+        },
+        "extra_deps": ["        <dependency>\n", "            <groupId>ru.yandex.qatools.allure</groupId>\n", "            <artifactId>allure-report-data</artifactId>\n", "            <version>1.5.3</version>\n", "        </dependency>\n"],
+        "extra_imports": ["import com.google.inject.*;\n", "import ru.yandex.qatools.allure.data.AllureGuiceModule;\n", "import java.io.File;\n"]
+    },
+    {
+        "id": "c8-1",
+        "desc": "(Ljava/util/Map;)V",
+        "args": {
+            "arg_2_configFile": ["String configFile = \"test.parsefilters.json\";\n"]
+        },
+        "extra_deps": [],
+        "extra_imports": ["import java.util.*;\n"]
+    },
+    {
+        "id": "c8-2",
+        "desc": "()V",
+        "args": {
+            "arg_1_inputStream": ["InputStream inputStream = getClass().getClassLoader().getResourceAsStream(\"parsefilters.config.file\");\n"]
+        },
+        "extra_deps": [],
+        "extra_imports": ["import java.io.InputStream;\n"]
+    },
+    {
+        "id": "c8-3",
+        "desc": "()V",
+        "args": {
+            "arg_1_inputStream": ["InputStream inputStream = getClass().getClassLoader().getResourceAsStream(\"parsefilters.config.file\");\n"]
+        },
+        "extra_deps": [],
+        "extra_imports": ["import java.io.InputStream;"]
+    },
+    {
+        "id": "c9-2",
+        "desc": "()V",
+        "args": {
+            "arg_1_recv": ["String messageBody = \"Lorem ipsum dolor sit amet\";\n", "Base64.decodeBase64(messageBody.getBytes(DEFAULT_CHARSET));\n"]
+        },
+        "extra_deps": [],
+        "extra_imports": []
+    },
+    {
+        "id": "c9-3",
+        "desc": "()V",
+        "args": {
+            "arg_1_recv": ["String messageBody = \"Lorem ipsum dolor sit amet\";\n", "Base64.decodeBase64(messageBody.getBytes(DEFAULT_CHARSET));\n"]
+        },
+        "extra_deps": [],
+        "extra_imports": []
+    },
+    {
+        "id": "c9-6",
+        "desc": "()Lorg/apache/hadoop/io/BytesWritable;",
+        "args": {
+            "arg_1_value": ["Text value = new Text(\"Lorem ipsum dolor sit amet\");\n"]
+        },
+        "extra_deps": [],
+        "extra_imports": ["import org.apache.hadoop.io.Text;"]
+    },
+    {
+        "id": "c9-7",
+        "desc": "()Lorg/apache/hadoop/hive/ql/plan/ExprNodeGenericFuncDesc;",
+        "args": {
+            "arg_1_s": ["String s = \"Lorem ipsum dolor sit amet\";\n"]
+        },
+        "extra_deps": [],
+        "extra_imports": []
+    },
+    {
+        "id": "c9-13",
+        "desc": "()[B",
+        "args": {
+            "arg_1_recv": ["String messageBody = \"Lorem ipsum dolor sit amet\";\n", "byte[] recv = messageBody.getBytes();\n"]
+        },
+        "extra_deps": [],
+        "extra_imports": []
+    },
+    {
+        "id": "c10-3",
+        "desc": "()V",
+        "args": {
+            "arg_1_output": ["LinkedBuffer linkedBuffer = LinkedBuffer.allocate();\n", "ProtobufOutput output = new ProtobufOutput(linkedBuffer);\n"],
+            "arg_2_tm": ["TestMap tm = new TestMap();"]
+        },
+        "extra_deps": [],
+        "extra_imports": ["import java.util.ArrayList;\n", "import java.util.HashMap;\n", "import java.util.List;\n", "import java.util.Map;\n", "import io.protostuff.*;\n", "import org.apache.servicecomb.codec.protobuf.utils.ScopedProtobufSchemaManager;\n", "import org.apache.servicecomb.codec.protobuf.utils.WrapSchema;\n"],
+        "extra_func": ["    public static class TestMap {\n", "        public Map<String, String> map = new HashMap<>();\n", "        public TestMap() {\n", "          map.put(\"asdf\", \"jjj\");\n", "        }\n", "      }\n"]
+    },
+    {
+        "id": "c11-1",
+        "desc": "()Lcom/mongodb/BasicDBObject;",
+        "args": {
+            "arg_1_key": ["String key = \"byteField\";"],
+            "arg_2_value": ["Object[] value = new Object[]{ 1L };"]
+        },
+        "extra_deps": [],
+        "extra_imports": []
+    },
+    {
+        "id": "c11-2",
+        "desc": "()Lcom/mongodb/BasicDBObject;",
+        "args": {
+            "arg_1_key": ["String key = \"byteField\";"],
+            "arg_2_value": ["Object[] value = new Object[]{ 1L };"]
+        },
+        "extra_deps": [],
+        "extra_imports": []
+    },
+    {
+        "id": "c11-3",
+        "desc": "()Lcom/mongodb/DBObject;",
+        "args": {
+            "arg_1_key": ["String key = \"byteField\";"],
+            "arg_2_value": ["Object value = 1L;"]
+        },
+        "extra_deps": [],
+        "extra_imports": []
+    },
+    {
+        "id": "c11-5",
+        "desc": "()Ljava/util/List;",
+        "args": {
+            "arg_1_distinct": ["List<?> distinct = Arrays.asList(1L);"]
+        },
+        "extra_deps": [],
+        "extra_imports": ["import java.util.Arrays;"]
+    },
+    {
+        "id": "c12-9",
+        "desc": "()V",
+        "args": {
+            "arg_1_loggerName": ["String loggerName = \"y.sql.DataSource\";"]
+        },
+        "extra_deps": [],
+        "extra_imports": []
+    },
+    {
+        "id": "c14-2",
+        "desc": "()Ljava/lang/Object;",
+        "args": {
+            "arg_1_object": ["final String object = \"292278994-08-17T07:12:55.808Z\";"]
+        },
+        "extra_deps": [],
+        "extra_imports": []
+    },
+    {
+        "id": "c14-3",
+        "desc": "()Ljava/util/Date;",
+        "args": {
+            "arg_1_jsonText": ["String jsonText = \"292278994-08-17T07:12:55.808Z\";"]
+        },
+        "extra_deps": [],
+        "extra_imports": []
+    },
+    {
+        "id": "c14-4",
+        "desc": "()Ljava/lang/Object;",
+        "args": {
+            "arg_1_str": ["final String str = \"292278994-08-17T07:12:55.807Z\";"]
+        },
+        "extra_deps": [],
+        "extra_imports": []
+    },
+    {
+        "id": "c14-5",
+        "desc": "()Ljava/lang/Object;",
+        "args": {
+            "arg_1_str": ["final String str = \"292278994-08-17T07:12:55.807Z\";"]
+        },
+        "extra_deps": [],
+        "extra_imports": []
+    },
+    {
+        "id": "c14-6",
+        "desc": "()Ljava/util/Date;",
+        "args": {
+            "arg_1_value": ["final String value = \"292278994-08-17T07:12:55.807Z\";"]
+        },
+        "extra_deps": [],
+        "extra_imports": []
+    },
+    {
+        "id": "c15-1",
+        "desc": "()Ljava/util/Date;",
+        "args": {
+            "arg_1_dateString": ["String dateString = \"292278994-08-17T07:12:55.807Z\";"]
+        },
+        "extra_deps": [],
+        "extra_imports": []
+    },
+    {
+        "id": "c15-2",
+        "desc": "()Ljava/util/Date;",
+        "args": {
+            "arg_1_dateString": ["String dateString = \"292278994-08-17T07:12:55.807Z\";"]
+        },
+        "extra_deps": [],
+        "extra_imports": []
+    },
+    {
+        "id": "c15-3",
+        "desc": "()Ljava/util/Date;",
+        "args": {
+            "arg_1_dateString": ["String dateString = \"292278994-08-17T07:12:55.807Z\";"]
+        },
+        "extra_deps": [],
+        "extra_imports": []
+    },
+    {
+        "id": "c15-4",
+        "desc": "()Ljava/util/Date;",
+        "args": {
+            "arg_1_dateString": ["String dateString = \"292278994-08-17T07:12:55.807Z\";"]
+        },
+        "extra_deps": [],
+        "extra_imports": []
+    },
+    {
+        "id": "c15-5",
+        "desc": "()Ljava/util/Date;",
+        "args": {
+            "arg_1_dateString": ["String dateString = \"292278994-08-17T07:12:55.807Z\";"]
+        },
+        "extra_deps": [],
+        "extra_imports": []
+    },
+    {
+        "id": "c15-6",
+        "desc": "()Ljava/util/Date;",
+        "args": {
+            "arg_1_dateString": ["String dateString = \"292278994-08-17T07:12:55.807Z\";"]
+        },
+        "extra_deps": [],
+        "extra_imports": []
+    },
+    {
+        "id": "c19-4",
+        "desc": "()Ljava/lang/String;",
+        "args": {
+            "arg_1_text": ["final String value = \"292278994-08-17T07:12:55.807Z\";"]
+        },
+        "extra_deps": [],
+        "extra_imports": []
+    },
+    {
+        "id": "c19-5",
+        "desc": "()Ljava/util/List;",
+        "args": {
+            "arg_1_text": ["final String value = \"292278994-08-17T07:12:55.807Z\";"]
+        },
+        "extra_deps": [],
+        "extra_imports": []
+    },
+    {
+        "id": "c23-5",
+        "desc": "()Ljava/lang/String;",
+        "args": {
+            "arg_1_json": ["String json = \"requestBytes\";"]
+        },
+        "extra_deps": [],
+        "extra_imports": []
+    },
+    {
+        "id": "c23-6",
+        "desc": "()Lorg/mockserver/model/HttpRequest;",
+        "args": {
+            "arg_1_jsonHttpRequest": ["String jsonHttpRequest = \"requestBytes\";"]
+        },
+        "extra_deps": [],
+        "extra_imports": []
+    },
+    {
+        "id": "c23-7",
+        "desc": "()Ljava/util/List;",
+        "args": {
+            "arg_1_jsonArray": ["String jsonArray = \"requestBytes\";"]
+        },
+        "extra_deps": [],
+        "extra_imports": []
+    }
+]
