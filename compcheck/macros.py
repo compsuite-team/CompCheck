@@ -26,7 +26,7 @@ CALL_SITES_JSON = CHECK_DIR + '/callsites.json'
 
 PARAM_TRACE_JAR = CHECK_DIR + '/javatools-paramtrace/target/paramtrace-1.0-SNAPSHOT-jar-with-dependencies.jar'
 CALLER_SLICING_JAR = CHECK_DIR + '/callerslicing/target/callerslicing-1.0-SNAPSHOT-jar-with-dependencies.jar'
-API_SEARCH_JAR = CHECK_DIR + "/api-search/target/api-search-1.0-SNAPSHOT.jar"
+API_SEARCH_JAR = CHECK_DIR + "/api-search-1.0-SNAPSHOT.jar"
 EVOSUITE_JAR = CHECK_DIR + "/evosuite-master-1.0.7-SNAPSHOT.jar"
 THRESHOLD = 0.7
 STRATEGY = "relax_prim_poly"
