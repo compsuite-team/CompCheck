@@ -1,0 +1,895 @@
+[
+  {
+    "id": "k1-1",
+    "API": "com.esotericsoftware.kryo.Kryo.writeObject(Lcom/esotericsoftware/kryo/io/Output;Ljava/lang/Object;)V",
+    "type": "virtual",
+    "versions": [
+      "3.0.3"
+    ],
+    "new_version": "5.0.0-RC4",
+    "lib": "com.esotericsoftware:kryo",
+    "co_evolve_libs": [],
+    "client": "rtree",
+    "test": "KryoSerializationTest#testKryo",
+    "args_actual_types": [
+      "com.esotericsoftware.kryo.Kryo",
+      "com.esotericsoftware.kryo.io.Output",
+      "com.github.davidmoten.rtree.KryoSerializationTest$Boo"
+    ],
+    "args_context": {
+      "com.esotericsoftware.kryo.Kryo@0": [
+        "com.esotericsoftware.kryo.Kryo.<init>()V",
+        "ACCEPT"
+      ],
+      "com.esotericsoftware.kryo.io.Output@1": [
+        "com.esotericsoftware.kryo.io.Output.<init>(Ljava/io/OutputStream;)V",
+        "ACCEPT"
+      ],
+      "java.lang.Object@2": [
+        "com.github.davidmoten.rtree.KryoSerializationTest$Boo.<init>(Ljava/lang/String;)V",
+        "ACCEPT"
+      ]
+    },
+    "states": {
+      "com.esotericsoftware.kryo.Kryo@0": [
+        "93fc1937-311c-4deb-80c4-d0d3ada122c6.xml"
+      ],
+      "com.esotericsoftware.kryo.io.Output@1": [
+        "73c4c0a6-e840-47d3-a92c-a82431128dbe.xml"
+      ],
+      "java.lang.Object@2": [
+        "178436e9-881b-40cd-b9b6-8bb397553655.xml"
+      ]
+    },
+    "reused_caller": [
+      {
+        "id": "c1-12",
+        "desc": "()V",
+        "args": {
+            "arg_1_kryo": ["Kryo kryo = new Kryo();"],
+            "arg_2_output": ["Output output = new Output(4096);"],
+            "arg_3_immutableMultiMap": ["ImmutableMultimap<Object, Object> immutableMultiMap = ImmutableMultimap.builder().build();"]
+        },
+        "extra_deps": [],
+        "extra_imports": ["import com.esotericsoftware.kryo.Kryo;\n", "import com.esotericsoftware.kryo.io.Output;\n", "import com.google.common.collect.ImmutableMultimap;\n"]
+      },
+      {
+        "id": "c1-16",
+        "desc": "()[B",
+        "args": {
+            "arg_2_object": ["Serializable object = (Serializable) (new String());"]
+        },
+        "extra_deps": [],
+        "extra_imports": ["import com.esotericsoftware.kryo.Kryo;\n", "import com.esotericsoftware.kryo.io.Output;\n", "import com.google.common.collect.ImmutableMultimap;\n"]
+      },
+      {
+        "id": "c1-18",
+        "desc": "()[B",
+        "args": {
+            "arg_2_obj": ["final Object obj = new Boo(\"hello\");"]
+        },
+        "extra_deps": [],
+        "extra_imports": [],
+        "extra_func": ["    public static class Boo {\n", "        public final String name;\n", "        private Boo() {\n", "            this(\"boo\");\n", "        }\n", "        public Boo(String name) {\n", "            this.name = name;\n", "        }\n", "    }\n"]
+      }
+    ]
+  },
+  {
+    "id": "k2-1",
+    "API": "org.kohsuke.args4j.CmdLineParser.<init>(Ljava/lang/Object;)V",
+    "type": "special",
+    "versions": [
+      "2.0.23"
+    ],
+    "new_version": "2.33",
+    "lib": "args4j:args4j",
+    "co_evolve_libs": [],
+    "client": "closure-templates",
+    "test": "SoyMsgExtractorTest#testOutputFileFlag",
+    "args_actual_types": [
+      "com.google.template.soy.SoyMsgExtractor"
+    ],
+    "args_context": {
+      "java.lang.Object@0": [
+        "com.google.template.soy.SoyMsgExtractor.<init>()V",
+        "ACCEPT"
+      ]
+    },
+    "states": {
+      "java.lang.Object@0": [
+        "9091e3c5-002d-4179-95c9-ecc6a1c961ea.xml"
+      ]
+    }
+  },
+  {
+    "id": "k3-1",
+    "API": "com.fasterxml.jackson.databind.ObjectMapper.writeValueAsString(Ljava/lang/Object;)Ljava/lang/String;",
+    "type": "virtual",
+    "versions": [
+      "2.9.6"
+    ],
+    "new_version": "2.10.1",
+    "lib": "com.fasterxml.jackson.core:jackson-databind",
+    "co_evolve_libs": [
+      "com.fasterxml.jackson.core:jackson-core"
+    ],
+    "client": "galen",
+    "test": "OcrValidationTest#testToCollectKnowledge",
+    "args_actual_types": [
+      "com.fasterxml.jackson.databind.ObjectMapper",
+      "com.galenframework.ocr.google.pojo.request.GoogleRequest"
+    ],
+    "args_context": {
+      "com.fasterxml.jackson.databind.ObjectMapper@0": [
+        "com.fasterxml.jackson.databind.ObjectMapper.<init>()V",
+        "ACCEPT"
+      ],
+      "java.lang.Object@1": [
+        "com.galenframework.ocr.google.pojo.request.GoogleRequest.<init>()V",
+        "com.galenframework.ocr.google.pojo.request.GoogleRequest.setRequests(Ljava/util/List;)V",
+        "ACCEPT"
+      ]
+    },
+    "states": {
+      "com.fasterxml.jackson.databind.ObjectMapper@0": [
+        "bd331368-6c35-4e78-8d0a-2db2abb4a69d.xml"
+      ],
+      "java.lang.Object@1": [
+        "8309cbe3-441e-482e-84b1-8bdc07c60539.xml",
+        "a085f74b-119e-4bb1-910f-2217d022881f.xml"
+      ]
+    }
+  },
+  {
+    "id": "k4-1",
+    "API": "org.objectweb.asm.MethodVisitor.visitFrame(II[Ljava/lang/Object;I[Ljava/lang/Object;)V",
+    "type": "virtual",
+    "versions": [
+      "5.1"
+    ],
+    "new_version": "7.2",
+    "lib": "org.ow2.asm:asm",
+    "co_evolve_libs": [],
+    "client": "reflectasm",
+    "test": "MethodAccessTest#testInvokeInterface",
+    "args_actual_types": [
+      "org.objectweb.asm.MethodWriter",
+      "int",
+      "int",
+      "object[]",
+      "int",
+      "null"
+    ],
+    "args_context": {
+      "org.objectweb.asm.MethodWriter@0": [
+        "org.objectweb.asm.MethodWriter.<init>(Lorg/objectweb/asm/SymbolTable;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;I)V",
+        "org.objectweb.asm.MethodWriter.visitCode()V",
+        "org.objectweb.asm.MethodWriter.visitVarInsn(II)V",
+        "org.objectweb.asm.MethodWriter.visitTypeInsn(ILjava/lang/String;)V",
+        "org.objectweb.asm.MethodWriter.visitVarInsn(II)V",
+        "org.objectweb.asm.MethodWriter.visitVarInsn(II)V",
+        "org.objectweb.asm.MethodWriter.visitTableSwitchInsn(IILorg/objectweb/asm/Label;[Lorg/objectweb/asm/Label;)V",
+        "org.objectweb.asm.MethodWriter.visitLabel(Lorg/objectweb/asm/Label;)V",
+        "ACCEPT"
+      ],
+      "INT@1": [
+        "ACCEPT"
+      ],
+      "INT@2": [
+        "ACCEPT"
+      ],
+      "java.lang.Object[]@3": [
+        "ACCEPT"
+      ],
+      "INT@4": [
+        "ACCEPT"
+      ],
+      "java.lang.Object[]@5": [
+        "ACCEPT"
+      ]
+    },
+    "states": {
+      "org.objectweb.asm.MethodWriter@0": [
+        "68a50d93-a99b-4169-ad15-d976305e3392.xml",
+        "39daf793-d18a-4cd1-9d42-9899b1cbed84.xml",
+        "2fb061aa-187b-4c39-83b3-b7a785aea220.xml",
+        "546b9fdb-fbe5-4e2f-aa04-d54f3f74293c.xml",
+        "60ebed96-55af-415e-bc2e-3abb0f98647c.xml",
+        "618fc1c5-e010-4859-aaf6-cbc40baab02b.xml",
+        "edc400ef-58fd-43d2-9924-59ddc6b907cc.xml",
+        "e66cc0cd-2c1c-436a-9bd4-62159d1cf0ef.xml"
+      ],
+      "INT@1": 1,
+      "INT@2": 1,
+      "java.lang.Object[]@3": [
+        "3d9a011a-ca5e-45b6-b1ef-e63549db181b.xml"
+      ],
+      "INT@4": 0,
+      "java.lang.Object[]@5": [
+        "134d57e6-073a-44e7-9d36-564039c2b91c.xml"
+      ]
+    }
+  },
+  {
+    "id": "k5-1",
+    "API": "org.objectweb.asm.Type.getType(Ljava/lang/String;)Lorg/objectweb/asm/Type;",
+    "type": "static",
+    "versions": [
+      "5.0.4"
+    ],
+    "new_version": "7.2",
+    "lib": "org.ow2.asm:asm",
+    "co_evolve_libs": [
+      "org.ow2.asm:asm-tree",
+      "org.ow2.asm:asm-util",
+      "org.ow2.asm:asm-analysis",
+      "org.ow2.asm:asm-commons"
+    ],
+    "client": "artemis-odb",
+    "test": "EntityLinkGeneratorTest#generate_entity_id_accessor",
+    "args_actual_types": [
+      "string"
+    ],
+    "args_context": {
+      "java.lang.String@0": [
+        "ACCEPT"
+      ]
+    },
+    "states": {
+      "java.lang.String@0": "21124388-24dc-4b5c-a03e-38f3582afa9b.xml"
+    }
+  },
+  {
+    "id": "k6-1",
+    "API": "com.google.inject.Guice.createInjector([Lcom/google/inject/Module;)Lcom/google/inject/Injector;",
+    "type": "static",
+    "versions": [
+      "4.0"
+    ],
+    "new_version": "4.2.2",
+    "lib": "com.google.inject:guice",
+    "co_evolve_libs": [],
+    "client": "allure1",
+    "test": "AllureReportGeneratorTest#shouldFailIfNoResults",
+    "args_actual_types": [
+      "ru.yandex.qatools.allure.data.AllureGuiceModule[]"
+    ],
+    "args_context": {
+      "com.google.inject.Module[]@0": [
+        "ru.yandex.qatools.allure.data.AllureGuiceModule.<init>(Ljava/lang/ClassLoader;[Ljava/io/File;)V",
+        "ACCEPT"
+      ]
+    },
+    "states": {
+      "com.google.inject.Module[]@0": [
+        "6dba2457-4b11-4ae7-9a0c-857c59648ec8.xml"
+      ]
+    }
+  },
+  {
+    "id": "k7-1",
+    "API": "org.reflections.Reflections.<init>(Ljava/lang/String;[Lorg/reflections/scanners/Scanner;)V",
+    "type": "special",
+    "versions": [
+      "0.9.9"
+    ],
+    "new_version": "0.9.11",
+    "lib": "org.reflections:reflections",
+    "co_evolve_libs": [],
+    "client": "jongo",
+    "test": "DeprecatedAnnotationsCompatibilitySuiteTest",
+    "args_actual_types": [
+      "string",
+      "org.reflections.scanners.Scanner[]"
+    ],
+    "args_context": {
+      "java.lang.String@0": [
+        "ACCEPT"
+      ],
+      "org.reflections.scanners.Scanner[]@1": [
+        "ACCEPT"
+      ]
+    },
+    "states": {
+      "java.lang.String@0": "423b076f-134d-44f7-a5da-1acafa646aa6.xml",
+      "org.reflections.scanners.Scanner[]@1": [
+        "250acc91-447d-4df1-aea2-c45b9ae90268.xml"
+      ]
+    }
+  },
+  {
+    "id": "k8-2",
+    "API": "com.fasterxml.jackson.databind.ObjectMapper.readValue(Ljava/io/InputStream;Ljava/lang/Class;)Ljava/lang/Object;",
+    "type": "virtual",
+    "versions": [
+      "2.9.9.2"
+    ],
+    "new_version": "2.10.1",
+    "lib": "com.fasterxml.jackson.core:jackson-databind",
+    "co_evolve_libs": [],
+    "client": "enunciate",
+    "test": "TestGeneratedJsonTypeSerialization#testBasicShapes",
+    "args_actual_types": [
+      "com.fasterxml.jackson.databind.ObjectMapper",
+      "java.io.ByteArrayInputStream",
+      "java-class"
+    ],
+    "args_context": {
+      "com.fasterxml.jackson.databind.ObjectMapper@0": [
+        "com.fasterxml.jackson.databind.ObjectMapper.<init>()V",
+        "ACCEPT"
+      ],
+      "java.io.InputStream@1": [
+        "java.io.ByteArrayInputStream.<init>([B)V",
+        "ACCEPT"
+      ],
+      "java.lang.Class@2": [
+        "ACCEPT"
+      ]
+    },
+    "states": {
+      "com.fasterxml.jackson.databind.ObjectMapper@0": [
+        "07a4a386-d2ff-4c7d-ad7e-2e173bbe5f66.xml"
+      ],
+      "java.io.InputStream@1": [
+        "3e28a51a-1975-4e03-8c21-dc386e2a33cc.xml"
+      ],
+      "java.lang.Class@2": [
+        "577c9d12-2bfe-4e22-a86f-bb01184fb031.xml"
+      ]
+    }
+  },
+  {
+    "id": "k9-1",
+    "API": "org.apache.commons.codec.binary.Base64.decodeBase64([B)[B",
+    "type": "static",
+    "versions": [
+      "1.12"
+    ],
+    "new_version": "1.13",
+    "lib": "commons-codec:commons-codec",
+    "co_evolve_libs": [],
+    "client": "httpcomponents-client",
+    "test": "TestByteArrayCacheEntrySerializer#canSerializeEntriesWithVariantMaps",
+    "args_actual_types": [
+      "byte[]"
+    ],
+    "args_context": {
+      "BYTE[]@0": [
+        "ACCEPT"
+      ]
+    },
+    "states": {
+      "BYTE[]@0": [
+        "b6b8e9c6-0c4b-4319-b7e8-768f180ba352.xml"
+      ]
+    }
+  },
+  {
+    "id": "k10-1",
+    "API": "io.protostuff.Schema.writeTo(Lio/protostuff/Output;Ljava/lang/Object;)V",
+    "type": "virtual",
+    "versions": [
+      "1.5.9"
+    ],
+    "new_version": "1.6.2",
+    "lib": "io.protostuff:protostuff-runtime",
+    "co_evolve_libs": [
+      "io.protostuff:protostuff-core",
+      "io.protostuff:protostuff-parser"
+    ],
+    "client": "servicecomb-java-chassis",
+    "test": "TestProtobufSchemaUtils#wrapPrimitive",
+    "args_actual_types": [
+      "io.protostuff.runtime.RuntimeSchema",
+      "io.protostuff.ProtobufOutput",
+      "gen.wrap.protobuf.java.lang.String"
+    ],
+    "args_context": {
+      "io.protostuff.runtime.RuntimeSchema@0": [
+        "io.protostuff.runtime.RuntimeSchema.<init>(Ljava/lang/Class;Ljava/util/Collection;Lio/protostuff/runtime/RuntimeEnv$Instantiator;)V",
+        "io.protostuff.runtime.RuntimeSchema.newMessage()Ljava/lang/Object;",
+        "ACCEPT"
+      ],
+      "io.protostuff.Output@1": [
+        "io.protostuff.ProtobufOutput.<init>(Lio/protostuff/LinkedBuffer;)V",
+        "ACCEPT"
+      ],
+      "java.lang.Object@2": [
+        "ACCEPT"
+      ]
+    },
+    "states": {
+      "io.protostuff.runtime.RuntimeSchema@0": [
+        "5db5eda9-fb69-4d2a-9f84-e8bb8a4b2ec4.xml",
+        "0a885a9f-6531-4cc9-ba70-6e793e29324f.xml"
+      ],
+      "io.protostuff.Output@1": [
+        "a3f0840a-1ae2-4433-9f1c-d48a22969173.xml"
+      ],
+      "java.lang.Object@2": [
+        "829c46b7-47cf-44fa-b4b1-53ee13aa5a3a.xml"
+      ]
+    }
+  },
+  {
+    "id": "k11-1",
+    "API": "com.mongodb.BasicDBObject.<init>(Ljava/lang/String;Ljava/lang/Object;)V",
+    "type": "special",
+    "versions": [
+      "3.5.0"
+    ],
+    "new_version": "3.12.0",
+    "lib": "org.mongodb:mongo-java-driver",
+    "co_evolve_libs": [],
+    "client": "querydsl",
+    "test": "MongodbSerializerTest#equals",
+    "args_actual_types": [
+      "string",
+      "long"
+    ],
+    "args_context": {
+      "java.lang.String@0": [
+        "ACCEPT"
+      ],
+      "java.lang.Object@1": [
+        "ACCEPT"
+      ]
+    },
+    "states": {
+      "java.lang.String@0": "8ebeea72-5773-4d62-9b88-9d12c25c5e01.xml",
+      "java.lang.Object@1": [
+        "4277e6f8-205b-4f4c-9c25-f63a364a1694.xml"
+      ]
+    }
+  },
+  {
+    "id": "k12-1",
+    "API": "org.slf4j.LoggerFactory.getLogger(Ljava/lang/String;)Lorg/slf4j/Logger;",
+    "type": "static",
+    "versions": [
+      "1.7.9"
+    ],
+    "new_version": "2.0.0-alpha1",
+    "lib": "org.slf4j:slf4j-api",
+    "co_evolve_libs": [],
+    "client": "druid",
+    "test": "Slf4jLogFilterTest#test_slf4j",
+    "args_actual_types": [
+      "string"
+    ],
+    "args_context": {
+      "java.lang.String@0": [
+        "ACCEPT"
+      ]
+    },
+    "states": {
+      "java.lang.String@0": "9933884c-797e-404f-b323-6fe91efac8be.xml"
+    }
+  },
+  {
+    "id": "k13-1",
+    "API": "nl.jqno.equalsverifier.EqualsVerifier.forClass(Ljava/lang/Class;)Lnl/jqno/equalsverifier/EqualsVerifier;",
+    "type": "static",
+    "versions": [
+      "1.7.5"
+    ],
+    "new_version": "3.1.11",
+    "lib": "nl.jqno.equalsverifier:equalsverifier",
+    "co_evolve_libs": [],
+    "client": "pitest",
+    "test": "FeatureTest#shouldObeyHashcodeEqualsContract",
+    "args_actual_types": [
+      "java-class"
+    ],
+    "args_context": {
+      "java.lang.Class@0": [
+        "ACCEPT"
+      ]
+    },
+    "states": {
+      "java.lang.Class@0": [
+        "6442ff90-7976-4dda-b9cc-18f7082e73c9.xml"
+      ]
+    }
+  },
+  {
+    "id": "k14-1",
+    "API": "org.joda.time.format.DateTimeFormatter.parseDateTime(Ljava/lang/String;)Lorg/joda/time/DateTime;",
+    "type": "virtual",
+    "versions": [
+      "2.8.1"
+    ],
+    "new_version": "2.10.5",
+    "lib": "joda-time:joda-time",
+    "co_evolve_libs": [],
+    "client": "aws-sdk-java",
+    "test": "DateUtilsTest#testIssue233JodaTimeLimit",
+    "args_actual_types": [
+      "org.joda.time.format.DateTimeFormatter",
+      "string"
+    ],
+    "args_context": {
+      "org.joda.time.format.DateTimeFormatter@0": [
+        "org.joda.time.format.DateTimeFormatter.<init>(Lorg/joda/time/format/InternalPrinter;Lorg/joda/time/format/InternalParser;Ljava/util/Locale;ZLorg/joda/time/Chronology;Lorg/joda/time/DateTimeZone;Ljava/lang/Integer;I)V",
+        "org.joda.time.format.DateTimeFormatter.print(J)Ljava/lang/String;",
+        "ACCEPT"
+      ],
+      "java.lang.String@1": [
+        "ACCEPT"
+      ]
+    },
+    "states": {
+      "org.joda.time.format.DateTimeFormatter@0": [
+        "7fc39b3d-3a82-4e3d-bef8-28ddfb7de7d5.xml",
+        "9f59f84e-e120-4c87-83da-d2ae8bbd93c3.xml"
+      ],
+      "java.lang.String@1": "a2f9e024-b3fa-4647-ae98-183bf58d55ac.xml"
+    }
+  },
+  {
+    "id": "k15-1",
+    "API": "org.joda.time.format.DateTimeFormatter.parseMillis(Ljava/lang/String;)J",
+    "type": "virtual",
+    "versions": [
+      "2.8.1"
+    ],
+    "new_version": "2.10.5",
+    "lib": "joda-time:joda-time",
+    "co_evolve_libs": [],
+    "client": "aws-sdk-java",
+    "test": "DateUtilsTest#testIssue233Overflows",
+    "args_actual_types": [
+      "org.joda.time.format.DateTimeFormatter",
+      "string"
+    ],
+    "args_context": {
+      "org.joda.time.format.DateTimeFormatter@0": [
+        "org.joda.time.format.DateTimeFormatter.<init>(Lorg/joda/time/format/InternalPrinter;Lorg/joda/time/format/InternalParser;Ljava/util/Locale;ZLorg/joda/time/Chronology;Lorg/joda/time/DateTimeZone;Ljava/lang/Integer;I)V",
+        "ACCEPT"
+      ],
+      "java.lang.String@1": [
+        "ACCEPT"
+      ]
+    },
+    "states": {
+      "org.joda.time.format.DateTimeFormatter@0": [
+        "2e3207b2-c92f-45ff-bc9b-f2e8b79033b7.xml"
+      ],
+      "java.lang.String@1": "bbd2dffd-60b4-401c-9b78-f7c03b9f05a9.xml"
+    }
+  },
+  {
+    "id": "k16-1",
+    "API": "org.apache.http.client.HttpClient.execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;",
+    "type": "virtual",
+    "versions": [
+      "4.5.3"
+    ],
+    "new_version": "4.5.10",
+    "lib": "org.apache.httpcomponents:httpclient-osgi",
+    "co_evolve_libs": [
+      "org.apache.httpcomponents:httpcore"
+    ],
+    "client": "jolokia",
+    "test": "J4pReadIntegrationTest#nameTest",
+    "args_actual_types": [
+      "org.apache.http.impl.client.CloseableHttpClient",
+      "org.apache.http.client.methods.HttpGet"
+    ],
+    "args_context": {
+      "org.apache.http.impl.client.CloseableHttpClient@0": [
+        "ACCEPT"
+      ],
+      "org.apache.http.client.methods.HttpUriRequest@1": [
+        "org.apache.http.client.methods.HttpGet.<init>(Ljava/net/URI;)V",
+        "ACCEPT"
+      ]
+    },
+    "states": {
+      "org.apache.http.impl.client.CloseableHttpClient@0": [
+        "5b9a7789-e836-455e-8856-de1c95714b1d.xml"
+      ],
+      "org.apache.http.client.methods.HttpUriRequest@1": [
+        "c932db0a-9df7-43c9-920a-d36419e1fdc5.xml"
+      ]
+    }
+  },
+  {
+    "id": "k17-1",
+    "API": "us.codecraft.webmagic.selector.Json.jsonPath(Ljava/lang/String;)Lus/codecraft/webmagic/selector/Selectable;",
+    "type": "virtual",
+    "versions": [
+      "0.6.1"
+    ],
+    "new_version": "0.7.3",
+    "lib": "us.codecraft:webmagic-core",
+    "co_evolve_libs": [
+      "us.codecraft:webmagic-extension"
+    ],
+    "client": "webporter",
+    "test": "DemoDataProcessorTest#testProcess",
+    "args_actual_types": [
+      "us.codecraft.webmagic.selector.Json",
+      "string"
+    ],
+    "args_context": {
+      "us.codecraft.webmagic.selector.Json@0": [
+        "us.codecraft.webmagic.selector.Json.<init>(Ljava/lang/String;)V",
+        "ACCEPT"
+      ],
+      "java.lang.String@1": [
+        "ACCEPT"
+      ]
+    },
+    "states": {
+      "us.codecraft.webmagic.selector.Json@0": [
+        "f1cfa9e3-7eb1-4ce8-a2b6-cb043e4659df.xml"
+      ],
+      "java.lang.String@1": "f65f3d12-b026-45bd-a8e0-13028e5318e4.xml"
+    }
+  },
+  {
+    "id": "k18-1",
+    "API": "org.slf4j.Logger.getName()Ljava/lang/String;",
+    "type": "virtual",
+    "versions": [
+      "1.7.25"
+    ],
+    "new_version": "2.0.0-alpha1",
+    "lib": "org.slf4j:slf4j-api",
+    "co_evolve_libs": [],
+    "client": "glowroot",
+    "test": "LoggerTest#testGetLogger",
+    "args_actual_types": [
+      "org.slf4j.helpers.NOPLogger"
+    ],
+    "args_context": {
+      "org.slf4j.helpers.NOPLogger@0": [
+        "org.slf4j.helpers.NOPLogger.<init>()V",
+        "ACCEPT"
+      ]
+    },
+    "states": {
+      "org.slf4j.helpers.NOPLogger@0": [
+        "6cea0f7b-a2d9-4889-8b4c-6f742d61fbb5.xml"
+      ]
+    }
+  },
+  {
+    "id": "k19-1",
+    "API": "org.htmlcleaner.HtmlCleaner.clean(Ljava/lang/String;)Lorg/htmlcleaner/TagNode;",
+    "type": "virtual",
+    "versions": [
+      "2.5"
+    ],
+    "new_version": "2.23",
+    "lib": "net.sourceforge.htmlcleaner:htmlcleaner",
+    "co_evolve_libs": [],
+    "client": "webmagic",
+    "test": "XpathSelectorTest#testXpath2Selector",
+    "args_actual_types": [
+      "org.htmlcleaner.HtmlCleaner",
+      "string"
+    ],
+    "args_context": {
+      "org.htmlcleaner.HtmlCleaner@0": [
+        "org.htmlcleaner.HtmlCleaner.<init>()V",
+        "ACCEPT"
+      ],
+      "java.lang.String@1": [
+        "ACCEPT"
+      ]
+    },
+    "states": {
+      "org.htmlcleaner.HtmlCleaner@0": [
+        "bb95cb33-67b7-4c20-8860-201f66c9d996.xml"
+      ],
+      "java.lang.String@1": "0f58bbfa-c7cf-4a26-aa8f-5b01a4145589.xml"
+    }
+  },
+  {
+    "id": "k20-1",
+    "API": "org.restlet.Client.handle(Lorg/restlet/Request;)Lorg/restlet/Response;",
+    "type": "virtual",
+    "versions": [
+      "2.2.1"
+    ],
+    "new_version": "3.0-M1",
+    "lib": "org.restlet.jse:org.restlet",
+    "co_evolve_libs": [
+      "org.restlet.jse:org.restlet.ext.jetty"
+    ],
+    "client": "uReplicator",
+    "test": "ControllerStarterTest#testDelete",
+    "args_actual_types": [
+      "org.restlet.Client",
+      "org.restlet.Request"
+    ],
+    "args_context": {
+      "org.restlet.Client@0": [
+        "org.restlet.Client.<init>(Lorg/restlet/data/Protocol;)V",
+        "ACCEPT"
+      ],
+      "org.restlet.Request@1": [
+        "org.restlet.Request.<init>(Lorg/restlet/data/Method;Ljava/lang/String;)V",
+        "ACCEPT"
+      ]
+    },
+    "states": {
+      "org.restlet.Client@0": [
+        "897c75b1-86b1-4b00-9170-08a6f8183161.xml"
+      ],
+      "org.restlet.Request@1": [
+        "a0d0021f-3ced-4d4c-83c6-8beb8dfe5172.xml"
+      ]
+    }
+  },
+  {
+    "id": "k21-1",
+    "API": "com.alibaba.fastjson.JSONObject.toJSONString()Ljava/lang/String;",
+    "type": "virtual",
+    "versions": [
+      "1.1.41"
+    ],
+    "new_version": "1.2.62",
+    "lib": "com.alibaba:fastjson",
+    "co_evolve_libs": [],
+    "client": "uReplicator",
+    "test": "TestSourceKafkaClusterValidationManager#testValidation",
+    "args_actual_types": [
+      "com.alibaba.fastjson.JSONObject"
+    ],
+    "args_context": {
+      "com.alibaba.fastjson.JSONObject@0": [
+        "com.alibaba.fastjson.JSONObject.<init>()V",
+        "com.alibaba.fastjson.JSONObject.put(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;",
+        "com.alibaba.fastjson.JSONObject.put(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;",
+        "com.alibaba.fastjson.JSONObject.put(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;",
+        "com.alibaba.fastjson.JSONObject.put(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;",
+        "ACCEPT"
+      ]
+    },
+    "states": {
+      "com.alibaba.fastjson.JSONObject@0": [
+        "9257f70a-af97-4978-bad6-837463e25871.xml",
+        "311ed63e-d7c5-4fb5-85e1-01392c39aec6.xml",
+        "7c0e5e6f-dd13-4dd0-b329-8405a703d51c.xml",
+        "a0c376f3-917e-466b-879e-7b90636d6402.xml",
+        "278f1c5f-2b16-484a-8d9c-13cb8ab58d5e.xml"
+      ]
+    }
+  },
+  {
+    "id": "k22-1",
+    "API": "org.apache.http.impl.client.DefaultHttpClient.getCookieStore()Lorg/apache/http/client/CookieStore;",
+    "type": "virtual",
+    "versions": [
+      "4.2.5"
+    ],
+    "new_version": "4.5.10",
+    "lib": "org.apache.httpcomponents:httpclient",
+    "co_evolve_libs": [
+      "org.apache.httpcomponents:httpmime"
+    ],
+    "client": "nanohttpd",
+    "test": "CookieIntegrationTest#testCookieSentBackToClient",
+    "args_actual_types": [
+      "org.apache.http.impl.client.DefaultHttpClient"
+    ],
+    "args_context": {
+      "org.apache.http.impl.client.DefaultHttpClient@0": [
+        "org.apache.http.impl.client.DefaultHttpClient.<init>()V",
+        "ACCEPT"
+      ]
+    },
+    "states": {
+      "org.apache.http.impl.client.DefaultHttpClient@0": [
+        "aacd8add-18c1-497a-8eda-8ab13747ffac.xml"
+      ]
+    }
+  },
+  {
+    "id": "k23-1",
+    "API": "com.fasterxml.jackson.databind.ObjectMapper.readTree(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonNode;",
+    "type": "virtual",
+    "versions": [
+      "2.9.9"
+    ],
+    "new_version": "2.10.1",
+    "lib": "com.fasterxml.jackson.core:jackson-core",
+    "co_evolve_libs": [
+      "com.fasterxml.jackson.core:jackson-databind"
+    ],
+    "client": "mockserver",
+    "test": "HttpRequestSerializationErrorsTest#shouldHandleExceptionWhileDeserializingArray",
+    "args_actual_types": [
+      "com.fasterxml.jackson.databind.ObjectMapper",
+      "string"
+    ],
+    "args_context": {
+      "com.fasterxml.jackson.databind.ObjectMapper@0": [
+        "com.fasterxml.jackson.databind.ObjectMapper.<init>()V",
+        "com.fasterxml.jackson.databind.ObjectMapper.configure(Lcom/fasterxml/jackson/databind/DeserializationFeature;Z)Lcom/fasterxml/jackson/databind/ObjectMapper;",
+        "com.fasterxml.jackson.databind.ObjectMapper.configure(Lcom/fasterxml/jackson/databind/DeserializationFeature;Z)Lcom/fasterxml/jackson/databind/ObjectMapper;",
+        "com.fasterxml.jackson.databind.ObjectMapper.configure(Lcom/fasterxml/jackson/databind/DeserializationFeature;Z)Lcom/fasterxml/jackson/databind/ObjectMapper;",
+        "com.fasterxml.jackson.databind.ObjectMapper.configure(Lcom/fasterxml/jackson/databind/SerializationFeature;Z)Lcom/fasterxml/jackson/databind/ObjectMapper;",
+        "com.fasterxml.jackson.databind.ObjectMapper.configure(Lcom/fasterxml/jackson/databind/DeserializationFeature;Z)Lcom/fasterxml/jackson/databind/ObjectMapper;",
+        "com.fasterxml.jackson.databind.ObjectMapper.configure(Lcom/fasterxml/jackson/databind/DeserializationFeature;Z)Lcom/fasterxml/jackson/databind/ObjectMapper;",
+        "com.fasterxml.jackson.databind.ObjectMapper.configure(Lcom/fasterxml/jackson/core/JsonParser$Feature;Z)Lcom/fasterxml/jackson/databind/ObjectMapper;",
+        "com.fasterxml.jackson.databind.ObjectMapper.configure(Lcom/fasterxml/jackson/core/JsonParser$Feature;Z)Lcom/fasterxml/jackson/databind/ObjectMapper;",
+        "com.fasterxml.jackson.databind.ObjectMapper.configure(Lcom/fasterxml/jackson/core/JsonParser$Feature;Z)Lcom/fasterxml/jackson/databind/ObjectMapper;",
+        "com.fasterxml.jackson.databind.ObjectMapper.configure(Lcom/fasterxml/jackson/core/JsonParser$Feature;Z)Lcom/fasterxml/jackson/databind/ObjectMapper;",
+        "com.fasterxml.jackson.databind.ObjectMapper.configure(Lcom/fasterxml/jackson/core/JsonParser$Feature;Z)Lcom/fasterxml/jackson/databind/ObjectMapper;",
+        "com.fasterxml.jackson.databind.ObjectMapper.configure(Lcom/fasterxml/jackson/databind/DeserializationFeature;Z)Lcom/fasterxml/jackson/databind/ObjectMapper;",
+        "com.fasterxml.jackson.databind.ObjectMapper.setSerializationInclusion(Lcom/fasterxml/jackson/annotation/JsonInclude$Include;)Lcom/fasterxml/jackson/databind/ObjectMapper;",
+        "com.fasterxml.jackson.databind.ObjectMapper.setSerializationInclusion(Lcom/fasterxml/jackson/annotation/JsonInclude$Include;)Lcom/fasterxml/jackson/databind/ObjectMapper;",
+        "com.fasterxml.jackson.databind.ObjectMapper.setSerializationInclusion(Lcom/fasterxml/jackson/annotation/JsonInclude$Include;)Lcom/fasterxml/jackson/databind/ObjectMapper;",
+        "com.fasterxml.jackson.databind.ObjectMapper.registerModule(Lcom/fasterxml/jackson/databind/Module;)Lcom/fasterxml/jackson/databind/ObjectMapper;",
+        "com.fasterxml.jackson.databind.ObjectMapper.writerWithDefaultPrettyPrinter()Lcom/fasterxml/jackson/databind/ObjectWriter;",
+        "ACCEPT"
+      ],
+      "java.lang.String@1": [
+        "ACCEPT"
+      ]
+    },
+    "states": {
+      "com.fasterxml.jackson.databind.ObjectMapper@0": [
+        "8ac45810-1ba5-4f21-b3ba-1fe8192d8117.xml",
+        "55c8ba68-54d6-4faa-95f5-d2215e1ebb1a.xml",
+        "1b5cf7fc-1ea8-4fe8-ac00-13dfba821c7e.xml",
+        "51cf4709-e387-44be-ad03-66c83a55e6d6.xml",
+        "8db95b96-9b3c-426c-b825-601ec916dcd3.xml",
+        "65219dc0-4fe0-44e6-afb3-ddda1b441bf7.xml",
+        "3bf71186-4ab5-4c6f-961a-db2fe3236a48.xml",
+        "4403dc07-5bed-4266-be6e-832b35b751b2.xml",
+        "db1cc400-123b-4a8d-bde0-8b79310c405e.xml",
+        "ddcf7c5c-258f-4a87-ac2b-14a3826e89d6.xml",
+        "57c54b17-42d7-4f76-8d36-529d210e62bb.xml",
+        "eaa8ec02-59d8-41f5-bd0e-2188c548b05c.xml",
+        "193591bc-bd5d-40af-9699-cb42b005fac0.xml",
+        "17005dc6-dc85-41bc-bd07-ba62e6d7b002.xml",
+        "a13f30c2-223a-4f4d-905a-31f16515b5c9.xml",
+        "cc53811e-5847-4af0-91fc-255563f44d47.xml",
+        "e4264663-4710-4e1a-89ee-de87462af0d8.xml",
+        "9c400deb-dd22-43de-9e5c-e011c443f4f7.xml"
+      ],
+      "java.lang.String@1": "c7e54e63-56fb-4e5e-b7fb-fcfb69011a10.xml"
+    }
+  },
+  {
+    "id": "k24-1",
+    "API": "org.apache.http.client.utils.URIBuilder.build()Ljava/net/URI;",
+    "type": "virtual",
+    "versions": [
+      "4.5.1"
+    ],
+    "new_version": "4.5.10",
+    "lib": "org.apache.httpcomponents:httpclient",
+    "co_evolve_libs": [],
+    "client": "wasabi",
+    "test": "DefaultRestEndPointTest#testGetRestEndPointURI",
+    "args_actual_types": [
+      "org.apache.http.client.utils.URIBuilder"
+    ],
+    "args_context": {
+      "org.apache.http.client.utils.URIBuilder@0": [
+        "org.apache.http.client.utils.URIBuilder.<init>()V",
+        "org.apache.http.client.utils.URIBuilder.setScheme(Ljava/lang/String;)Lorg/apache/http/client/utils/URIBuilder;",
+        "org.apache.http.client.utils.URIBuilder.setHost(Ljava/lang/String;)Lorg/apache/http/client/utils/URIBuilder;",
+        "org.apache.http.client.utils.URIBuilder.setPath(Ljava/lang/String;)Lorg/apache/http/client/utils/URIBuilder;",
+        "org.apache.http.client.utils.URIBuilder.setPort(I)Lorg/apache/http/client/utils/URIBuilder;",
+        "ACCEPT"
+      ]
+    },
+    "states": {
+      "org.apache.http.client.utils.URIBuilder@0": [
+        "91123660-4132-4156-ba93-e5fbd7d4299c.xml",
+        "bf5cae78-0acd-413c-a6ed-8cc4829513d2.xml",
+        "4b7294a4-7993-41c6-8ac2-7fa5f9346c21.xml",
+        "c9e0fa53-b4c1-45ba-b7eb-66caf74a91c2.xml",
+        "dbd03a56-0010-494f-95e6-ddefd48b89e1.xml"
+      ]
+    }
+  }
+]
