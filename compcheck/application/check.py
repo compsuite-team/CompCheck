@@ -583,7 +583,7 @@ def modify(cid, api):
 
     extra_reused = ["c19-4", "c19-5"]
     if cid in extra_reused:
-        reused_dir = f"{ARG_OBJECT}/reused/{cid}/reused_arg.txt"
+        reused_dir = f"{ARG_OBJECT}/reused/{cid}/reused_arg.java"
         with open(reused_dir, 'r') as frdr:
             object_definition = frdr.readlines()
     insert_object_definition = []

@@ -124,7 +124,7 @@ def reuseCaller(cid):
 
     extra_reused_file = ["c19-4", "c19-5"]
     if cid in extra_reused_file:
-        reused_dir = f"{ARG_OBJECT}/reused/{cid}/reused_caller.txt"
+        reused_dir = f"{ARG_OBJECT}/reused/{cid}/reused_caller.java"
         with open(reused_dir, 'r') as frdr:
             reused_caller_lines = frdr.readlines()
 
