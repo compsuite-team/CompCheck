@@ -1,6 +1,0 @@
-public static Date doParseISO8601Date() { // CompCheck
-        String dateString = "292278994-08-17T07:12:55.807Z";
-        String temp = tempDateStringForJodaTime(dateString);
-        System.out.println("CALL_SITE_8");
-        return new Date(alternateIso8601DateFormat.parseMillis(dateString)); // CALL SITE 8: NEG
-    }

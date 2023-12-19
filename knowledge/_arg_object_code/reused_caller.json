@@ -249,7 +249,9 @@
             "arg_1_dateString": ["String dateString = \"292278994-08-17T07:12:55.807Z\";"]
         },
         "extra_deps": [],
-        "extra_imports": []
+        "extra_imports": [],
+        "extra_use": ["    public static Date doParseISO8601Date() { ", "        String dateString = \"292278994-08-17T07:12:55.807Z\";", "        String temp = tempDateStringForJodaTime(dateString);", "        if (temp.equals(dateString)) {return new Date(iso8601DateFormat.parseMillis(dateString));}", "        return new Date();", "    }"
+        ]
     },
     {
         "id": "c15-2",
@@ -258,7 +260,8 @@
             "arg_1_dateString": ["String dateString = \"292278994-08-17T07:12:55.807Z\";"]
         },
         "extra_deps": [],
-        "extra_imports": []
+        "extra_imports": [],
+        "extra_use": ["    public static Date doParseISO8601Date() { ", "        String dateString = \"292278994-08-17T07:12:55.807Z\";", "        String temp = tempDateStringForJodaTime(dateString);", "        final long milliLess365Days = iso8601DateFormat.parseMillis(temp);", "        return new Date();", "    }"]
     },
     {
         "id": "c15-3",
@@ -267,7 +270,9 @@
             "arg_1_dateString": ["String dateString = \"292278994-08-17T07:12:55.807Z\";"]
         },
         "extra_deps": [],
-        "extra_imports": []
+        "extra_imports": [],
+        "extra_use": [
+        "    public static Date doParseISO8601Date() {" , "        String dateString = \"292278994-08-17T07:12:55.807Z\";", "        String temp = tempDateStringForJodaTime(dateString);", "        try {", "            final long milliLess365Days = iso8601DateFormat.parseMillis(temp);", "            final long milli = milliLess365Days + MILLI_SECONDS_OF_365_DAYS;", "            if (milli < 0) {return new Date(iso8601DateFormat.parseMillis(dateString));}", "            return new Date(milli);", "        } catch (IllegalArgumentException e) {throw e;}", "    }"]
     },
     {
         "id": "c15-4",
@@ -276,7 +281,8 @@
             "arg_1_dateString": ["String dateString = \"292278994-08-17T07:12:55.807Z\";"]
         },
         "extra_deps": [],
-        "extra_imports": []
+        "extra_imports": [],
+        "extra_use": ["    public static Date doParseISO8601Date() { ", "        String dateString = \"292278994-08-17T07:12:55.807Z\";", "        String temp = tempDateStringForJodaTime(dateString);", "        return new Date(alternateIso8601DateFormat.parseMillis(dateString)); ", "    }"]
     },
     {
         "id": "c15-5",

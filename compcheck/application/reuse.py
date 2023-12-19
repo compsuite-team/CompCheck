@@ -117,11 +117,18 @@ def reuseCaller(cid):
             if need_alt_arg in reused_caller_lines[i]:
                 reused_caller_lines[i] = replace_substring(reused_caller_lines[i], need_alt_arg, caller_alter_args[j])
 
-    extra_reused = ["c15-1", "c15-2", "c15-3", "c15-4", "c19-4", "c19-5"]
+    extra_reused = ["c15-1", "c15-2", "c15-3", "c15-4"]
+    
     if cid in extra_reused:
+        reused_caller_lines = readExtraUseFromReusedCaller(cid)
+
+    extra_reused_file = ["c19-4", "c19-5"]
+    if cid in extra_reused_file:
         reused_dir = f"{ARG_OBJECT}/reused/{cid}/reused_caller.txt"
         with open(reused_dir, 'r') as frdr:
             reused_caller_lines = frdr.readlines()
+
+    exit(0)
 
     if lines[caller_start_line - 1].strip().startswith("@"):
         lines = lines[:caller_start_line - 1] + reused_caller_lines + ['\n'] + lines[caller_start_line - 1:]
@@ -199,6 +206,14 @@ def readReuseResultFromReusedCaller(cid):
                 func_lines = ""
     return lines, desc, args, imports_lines, deps_lines, func_lines
 
+def readExtraUseFromReusedCaller(cid):
+    with open(REUSE_CALLER_JSON, 'r') as f:
+        reused_context = json.load(f) 
+    lines = []
+    for rc in reused_context:
+        if rc["id"] == cid:
+            lines = rc["extra_use"]
+    return lines
 
 
 def addExtraDeps(cid, extra_lines):
