@@ -45,7 +45,7 @@ def runKnowledgeDiscoveryOnOneTest(id):
     cwd = os.getcwd()
     os.chdir(KNOWLEDGE_DOWNLOADS_DIR + '/' + client)
     sub.run('git checkout .', shell=True)
-    sub.run('mvn install -DskipTests -fn', shell=True, stdout=open(os.devnull, 'w'), stderr=sub.STDOUT)
+    sub.run('mvn install -DskipTests -fn -Denforcer.skip -Dgpg.skip -Drat.skip -Dcheckstyle.skip -Danimal.sniffer.skip', shell=True, stdout=open(os.devnull, 'w'), stderr=sub.STDOUT)
     if submodule != "N/A":
         os.chdir(f"{KNOWLEDGE_DOWNLOADS_DIR}/{client}/{submodule}")
     sub.run(f"mvn test -fn -Drat.ignoreErrors=true -DtrimStackTrace=false -Dtest={test}", shell=True, stdout=open(os.devnull, 'w'), stderr=sub.STDOUT)
