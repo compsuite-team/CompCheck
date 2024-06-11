@@ -274,7 +274,6 @@ def findAssertationTargetAPI(id):
     os.chdir(f"{KNOWLEDGE_DOWNLOADS_DIR}/{client}")
     sub.run('git checkout .', shell=True)
     removeSurefireArgs(client, submodule)
-    print(f"look: {TRACEAGENT_JAR}")
     if test_cmd != "N/A":
         agent_cmd = test_cmd + f" -DargLine=\"-javaagent:{TRACEAGENT_JAR}" + \
           f"=out={TRACES_DIR}/{id}/old.trace,xmls_path={XMLS_DIR}/{id},bound={TRACE_BOUND},tracing=method#argvalue#return," + \
