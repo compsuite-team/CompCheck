@@ -73,6 +73,11 @@ def extractCallSiteContext(cid):
     cwd = os.getcwd()
     if os.path.isfile(f"{context_output_dir}/context.json"):
         return
+    if not os.path.exists(CHECK_DOWNLOADS_DIR):
+        os.makedirs(CHECK_DOWNLOADS_DIR)
+    if not os.path.exists(f"{CHECK_DOWNLOADS_DIR}/{client}"):
+        os.chdir(CHECK_DOWNLOADS_DIR)
+        sub.run(f'git clone {url}', shell=True)
     os.chdir(f"{CHECK_DOWNLOADS_DIR}/{client}")
     sub.run('git checkout .', shell=True)
     sub.run(f"git checkout {c['sha']}", shell=True)
