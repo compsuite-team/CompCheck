@@ -10,7 +10,7 @@ AGENT_LOGS_DIR = KNOWLEDGE_DIR + '/_agent_logs'
 TRACES_DIR = KNOWLEDGE_DIR + '/_traces'
 XMLS_DIR = KNOWLEDGE_DIR + '/_xmls'
 
-TRACEAGENT_JAR = SCRIPT_DIR + '/../traceagent/target/traceagent-1.0-SNAPSHOT.jar'
+TRACEAGENT_JAR = SCRIPT_DIR + '/../check/traceagent-1.0-SNAPSHOT.jar'
 TRACE_BOUND = 10000
 
 _DOWNLOADS_DIR = SCRIPT_DIR + '/../_downloads/'
@@ -24,7 +24,7 @@ CHECK_DIR = SCRIPT_DIR + '/../check'
 CHECK_DOWNLOADS_DIR = CHECK_DIR + '/_downloads'
 CALL_SITES_JSON = CHECK_DIR + '/callsites.json'
 
-PARAM_TRACE_JAR = CHECK_DIR + '/javatools-paramtrace/target/paramtrace-1.0-SNAPSHOT-jar-with-dependencies.jar'
+PARAM_TRACE_JAR = CHECK_DIR + '/paramtrace-1.0-SNAPSHOT-jar-with-dependencies.jar'
 CALLER_SLICING_JAR = CHECK_DIR + '/callerslicing/target/callerslicing-1.0-SNAPSHOT-jar-with-dependencies.jar'
 API_SEARCH_JAR = CHECK_DIR + "/api-search-1.0-SNAPSHOT.jar"
 EVOSUITE_JAR = CHECK_DIR + "/evosuite-master-1.0.7-SNAPSHOT.jar"
