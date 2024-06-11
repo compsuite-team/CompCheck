@@ -7,7 +7,7 @@ import uuid
 import subprocess as sub
 import xml.etree.ElementTree as ET
 
-from macros import CHECK_DOWNLOADS_DIR
+from macros import KNOWLEDGE_DOWNLOADS_DIR
 from macros import TEST_LOGS_DIR
 from macros import AGENT_LOGS_DIR
 from macros import TRACES_DIR
@@ -32,22 +32,22 @@ def runKnowledgeDiscoveryOnOneTest(id):
             ci['lib_prefix'], ci['test'], ci['submodule'], ci['test_cmd'], ci['co_evolve_libs']
             break
     print(f"{client},{sha},{url},{lib},{old},{new},{client_prefix},{lib_prefix},{test},{submodule},{co_evolve_libs}")
-    if not os.path.exists(CHECK_DOWNLOADS_DIR):
-        os.makedirs(CHECK_DOWNLOADS_DIR)
-    client_dir = CHECK_DOWNLOADS_DIR + '/' + client
+    if not os.path.exists(KNOWLEDGE_DOWNLOADS_DIR):
+        os.makedirs(KNOWLEDGE_DOWNLOADS_DIR)
+    client_dir = KNOWLEDGE_DOWNLOADS_DIR + '/' + client
     if not os.path.isdir(client_dir):
         cwd = os.getcwd()
-        os.chdir(CHECK_DOWNLOADS_DIR)
+        os.chdir(KNOWLEDGE_DOWNLOADS_DIR)
         sub.run('git clone ' + url, shell=True)
-        os.chdir(CHECK_DOWNLOADS_DIR + '/' + client)
+        os.chdir(KNOWLEDGE_DOWNLOADS_DIR + '/' + client)
         sub.run('git checkout ' + sha, shell=True)
         os.chdir(cwd)
     cwd = os.getcwd()
-    os.chdir(CHECK_DOWNLOADS_DIR + '/' + client)
+    os.chdir(KNOWLEDGE_DOWNLOADS_DIR + '/' + client)
     sub.run('git checkout .', shell=True)
     sub.run('mvn install -DskipTests -fn', shell=True, stdout=open(os.devnull, 'w'), stderr=sub.STDOUT)
     if submodule != "N/A":
-        os.chdir(f"{CHECK_DOWNLOADS_DIR}/{client}/{submodule}")
+        os.chdir(f"{KNOWLEDGE_DOWNLOADS_DIR}/{client}/{submodule}")
     sub.run(f"mvn test -fn -Drat.ignoreErrors=true -DtrimStackTrace=false -Dtest={test}", shell=True, stdout=open(os.devnull, 'w'), stderr=sub.STDOUT)
     changeLibVersion(client, lib, new)
     removeSurefireArgs(client, submodule)
@@ -65,7 +65,7 @@ def runKnowledgeDiscoveryOnOneTest(id):
         shutil.rmtree(xmls_dir)
     os.makedirs(xmls_dir)
     if submodule != "N/A":
-        os.chdir(f"{CHECK_DOWNLOADS_DIR}/{client}/{submodule}")
+        os.chdir(f"{KNOWLEDGE_DOWNLOADS_DIR}/{client}/{submodule}")
     if test_cmd == "N/A":
         test_cmd = f"mvn test -fn -Drat.ignoreErrors=true -DtrimStackTrace=false -Dtest={test}"
     sub.run(test_cmd, shell=True, stdout=open(test_log_file, 'w'), stderr=sub.STDOUT)
@@ -75,14 +75,14 @@ def runKnowledgeDiscoveryOnOneTest(id):
                 f"client_prefix={client_prefix},lib_prefix={lib_prefix}\""
     print(agent_cmd)
     if submodule != "N/A":
-        os.chdir(f"{CHECK_DOWNLOADS_DIR}/{client}/{submodule}")
+        os.chdir(f"{KNOWLEDGE_DOWNLOADS_DIR}/{client}/{submodule}")
     sub.run(agent_cmd, shell=True, stdout=open(agent_log_file, 'w'), stderr=sub.STDOUT)
     os.chdir(cwd)
     api, index = findTargetAPI(id)
     convertTrace(id, api, index)
 
 def changeLibVersion(client: str, lib: str, lib_version: str,
-                     downloads_dir=CHECK_DOWNLOADS_DIR):
+                     downloads_dir=KNOWLEDGE_DOWNLOADS_DIR):
     client_dir = downloads_dir + '/' + client
     for dir_path, subpaths, files in os.walk(client_dir):
         for f in files:
@@ -108,7 +108,7 @@ def changeLibVersionOfOnePomFile(lib: str, lib_version: str, pom_file: str):
     fw.close()
 
 
-def removeSurefireArgs(client, submodule, downloads_dir=CHECK_DOWNLOADS_DIR):
+def removeSurefireArgs(client, submodule, downloads_dir=KNOWLEDGE_DOWNLOADS_DIR):
     root_dir = f"{downloads_dir}/{client}"
     for dir_path, subpaths, files in os.walk(root_dir):
         for f in files:
@@ -271,9 +271,10 @@ def findAssertationTargetAPI(id):
                 return api, i
     print("Need compare old & new traces")
     cwd = os.getcwd()
-    os.chdir(f"{CHECK_DOWNLOADS_DIR}/{client}")
+    os.chdir(f"{KNOWLEDGE_DOWNLOADS_DIR}/{client}")
     sub.run('git checkout .', shell=True)
     removeSurefireArgs(client, submodule)
+    print(f"look: {TRACEAGENT_JAR}")
     if test_cmd != "N/A":
         agent_cmd = test_cmd + f" -DargLine=\"-javaagent:{TRACEAGENT_JAR}" + \
           f"=out={TRACES_DIR}/{id}/old.trace,xmls_path={XMLS_DIR}/{id},bound={TRACE_BOUND},tracing=method#argvalue#return," + \
@@ -284,7 +285,7 @@ def findAssertationTargetAPI(id):
           f"client_prefix={client_prefix},lib_prefix={lib_prefix}\""
     print(agent_cmd)
     if submodule != "N/A":
-        os.chdir(f"{CHECK_DOWNLOADS_DIR}/{client}/{submodule}")
+        os.chdir(f"{KNOWLEDGE_DOWNLOADS_DIR}/{client}/{submodule}")
     sub.run(agent_cmd, shell=True, stdout=open(f"{AGENT_LOGS_DIR}/{id}/old.agent.log", 'w'), stderr=sub.STDOUT)
     os.chdir(cwd)
     if not os.path.isfile(f"{TRACES_DIR}/{id}/old.trace"):
